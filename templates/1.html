@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <h1>Epidemic Predictor</h1>
+        <h3 style="text-align:center">Predict Will Epidemic Happen in a given Year</h3>
+        <form action="/1" class="form-inline" method="get">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="number" class="form-control" name="year" id="year" placeholder="Year to Predict">
+                <label for="year" class="sr-only">Year</label>
+                <input type="hidden" class="form-control" name="form" value="predict">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Check for Epidemic</button>
+        </form>
+        {% if prediction == 0 %}
+            <p style="color:green">{{ predict_message }}</p>
+        {% else %}
+            <p style="color:red">{{ predict_message }}</p>
+        {% endif %}
+    </body>
+</html>
